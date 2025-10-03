@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Салон маникюра "Элегантность"</title>
+    <style>
+        /* СТИЛИ ПЕРЕНЕСЕНЫ СЮДА ДЛЯ НАДЕЖНОСТИ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .services {
+            padding: 3rem 0;
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 2px solid #ffeaea;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin: 1rem 0;
+        }
+
+        .booking-form {
+            padding: 3rem 0;
+            background: #f8f8f8;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #ff6b6b;
+        }
+
+        button {
+            background: #ff6b6b;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #ff5252;
+        }
+
+        .appointments {
+            padding: 3rem 0;
+            background: white;
+        }
+
+        #appointmentsList {
+            margin-top: 2rem;
+        }
+
+        .appointment-item {
+            background: #f8f8f8;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b6b;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-container {
+                padding: 1.5rem;
+                margin: 0 10px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="hero">
+                <h1>Салон маникюра "Элегантность"</h1>
+                <p>Профессиональный уход за вашими руками</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="services">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Наши услуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Классический маникюр</h3>
+                    <p>Обрезной маникюр с покрытием</p>
+                    <div class="price">1500 руб.</div>
+                </div>
+                <div class="service-card">
+                    <h3>Аппаратный маникюр</h3>
+                    <p>Современный безболезненный метод</p>
+                    <div class="price">2000 руб.</div>
+                </div>
+                <div class="service-card">
+                    <h3>Покрытие гель-лак</h3>
+                    <p>Стойкое покрытие на 2-3 недели</p>
+                    <div class="price">1200 руб.</div>
+                </div>
+                <div class="service-card">
+                    <h3>Дизайн ногтей</h3>
+                    <p>Художественный дизайн любой сложности</p>
+                    <div class="price">от 500 руб.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-form">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Записаться на прием</h2>
+            <div class="form-container">
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="name">Имя:</label>
+                        <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Телефон:</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 123-45-67">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Услуга:</label>
+                        <select id="service" name="service" required>
+                            <option value="">Выберите услугу</option>
+                            <option value="classic">Классический маникюр - 1500 руб.</option>
+                            <option value="apparatus">Аппаратный маникюр - 2000 руб.</option>
+                            <option value="gel">Покрытие гель-лак - 1200 руб.</option>
+                            <option value="design">Дизайн ногтей - от 500 руб.</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Дата:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time">Время:</label>
+                        <input type="time" id="time" name="time" required min="09:00" max="21:00">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Дополнительные пожелания:</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="Ваши пожелания..."></textarea>
+                    </div>
+                    
+                    <button type="submit">Записаться</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="appointments">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Мои записи</h2>
+            <div id="appointmentsList">
+                <!-- Записи будут отображаться здесь -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Салон маникюра "Элегантность". Все права защищены.</p>
+            <p>Телефон: +7 (999) 123-45-67 | Адрес: ул. Красивая, д. 1</p>
+            <p>Режим работы: Пн-Вс с 9:00 до 21:00</p>
+        </div>
+    </footer>
+
+    <script>
+        // ПРОСТОЙ И РАБОЧИЙ JAVASCRIPT КОД
+        console.log("Сайт загружен!");
+
+        // Загрузка при запуске
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOM загружен");
+            loadAppointments();
+            
+            // Установка минимальной даты как сегодняшней
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').min = today;
+        });
+
+        // Обработка формы записи
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log("Форма отправлена!");
+            
+            const formData = {
+                id: Date.now(),
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: '', // упрощаем
+                service: document.getElementById('service').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                notes: document.getElementById('notes').value,
+                createdAt: new Date().toLocaleString('ru-RU'),
+                status: 'confirmed'
+            };
+            
+            saveAppointment(formData);
+            this.reset();
+            alert('✅ Запись успешно добавлена!');
+        });
+
+        // Сохранение записи в localStorage
+        function saveAppointment(appointment) {
+            let appointments = JSON.parse(localStorage.getItem('manicureAppointments')) || [];
+            appointments.push(appointment);
+            localStorage.setItem('manicureAppointments', JSON.stringify(appointments));
+            loadAppointments();
+            console.log("Запись сохранена:", appointment);
+        }
+
+        // Загрузка и отображение записей
+        function loadAppointments() {
+            const appointments = JSON.parse(localStorage.getItem('manicureAppointments')) || [];
+            const appointmentsList = document.getElementById('appointmentsList');
+            
+            if (appointments.length === 0) {
+                appointmentsList.innerHTML = '<p style="text-align: center; color: #666;">Записей пока нет</p>';
+                return;
+            }
+            
+            // Фильтруем только активные записи
+            const activeAppointments = appointments.filter(apt => apt.status !== 'cancelled');
+            
+            if (activeAppointments.length === 0) {
+                appointmentsList.innerHTML = '<p style="text-align: center; color: #666;">Активных записей нет</p>';
+                return;
+            }
+            
+            appointmentsList.innerHTML = activeAppointments.map(appointment => `
+                <div class="appointment-item">
+                    <h3>${getServiceName(appointment.service)}</h3>
+                    <p><strong>Имя:</strong> ${appointment.name}</p>
+                    <p><strong>Телефон:</strong> ${appointment.phone}</p>
+                    <p><strong>Дата:</strong> ${appointment.date}</p>
+                    <p><strong>Время:</strong> ${appointment.time}</p>
+                    ${appointment.notes ? `<p><strong>Примечания:</strong> ${appointment.notes}</p>` : ''}
+                    <button class="delete-btn" onclick="deleteAppointment(${appointment.id})">
+                        ❌ Отменить запись
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // Удаление записи
+        function deleteAppointment(id) {
+            if (confirm('Вы уверены, что хотите отменить эту запись?')) {
+                let appointments = JSON.parse(localStorage.getItem('manicureAppointments')) || [];
+                const appointmentIndex = appointments.findIndex(apt => apt.id === id);
+                
+                if (appointmentIndex !== -1) {
+                    appointments[appointmentIndex].status = 'cancelled';
+                    localStorage.setItem('manicureAppointments', JSON.stringify(appointments));
+                    loadAppointments();
+                    alert('Запись отменена');
+                }
+            }
+        }
+
+        // Вспомогательные функции
+        function getServiceName(serviceCode) {
+            const services = {
+                'classic': '💅 Классический маникюр',
+                'apparatus': '🔧 Аппаратный маникюр',
+                'gel': '💎 Покрытие гель-лак',
+                'design': '🎨 Дизайн ногтей'
+            };
+            return services[serviceCode] || 'Услуга';
+        }
+    </script>
+</body>
+</html>
