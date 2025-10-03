@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Салон маникюра "Элегантность"</title>
+    <style>
+        /* Стили остаются такими же как в предыдущей версии */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        /* ... остальные стили ... */
+    </style>
+</head>
+<body>
+    <!-- HTML структура остается такой же -->
+    <header>
+        <div class="container">
+            <div class="hero">
+                <h1>Салон маникюра "Элегантность"</h1>
+                <p>Профессиональный уход за вашими руками</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Остальная разметка -->
+
+    <script>
+        // Для публичного сайта нужно заменить localStorage на работу с сервером
+        const API_URL = 'https://your-backend-url.com/api'; // Замените на ваш URL
+
+        async function saveAppointment(appointment) {
+            try {
+                const response = await fetch(`${API_URL}/appointments`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(appointment)
+                });
+                
+                if (response.ok) {
+                    alert('Запись успешно добавлена!');
+                    loadAppointments();
+                } else {
+                    alert('Ошибка при сохранении записи');
+                }
+            } catch (error) {
+                console.error('Ошибка:', error);
+                alert('Ошибка соединения с сервером');
+            }
+        }
+
+        async function loadAppointments() {
+            try {
+                const response = await fetch(`${API_URL}/appointments`);
+                const appointments = await response.json();
+                
+                // Отображение записей
+                displayAppointments(appointments);
+            } catch (error) {
+                console.error('Ошибка загрузки записей:', error);
+            }
+        }
+
+        // Остальной JavaScript код...
+    </script>
+</body>
+</html>
